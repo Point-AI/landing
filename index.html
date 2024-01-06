@@ -7,6 +7,9 @@
     <title>PointAI</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -22,14 +25,14 @@
             <img src="assets/logo.svg" alt="PointAI Logo">
         </a>
         <nav>
-            <a href="#">About</a>
-            <a href="#">Succes Cases</a>
+            <a href="#why">About</a>
+            <a href="#case-study">Succes Cases</a>
             <a href="#">Blog</a>
             <a href="#contact">Contact</a>
-            <a href="#">Integrations</a>
+            <a href="#features">Integrations</a>
         </nav>
-        <a href="#" class="button">
-            Get Started
+        <a class="button calendly">
+            Contact Sales
         </a>
     </header>
 
@@ -40,21 +43,19 @@
         <p>Empowering Shopify merchants with AI co-pilot that handle all type of tickets, including refunds,
             cancelations and many more</p>
         <div class="buttons">
-            <a href="#" class="button">Contact sales</a>
-            <a href="#" class="button">telegram</a>
-            <a href="#" class="button">e-mail</a>
+            <a class="button calendly">Contact Sales</a>
         </div>
         <div class="brands">
             <div>
                 <p>Backed by:</p>
-                <a href="#"><img src="assets/brands/pnp.svg" alt="Plug and Play"></a>
+                <a href="https://www.plugandplaytechcenter.com/"><img src="assets/brands/pnp.svg" alt="Plug and Play"></a>
             </div>
             <div>
                 <p>Loved by over 50’000+ users from companies like:</p>
                 <div>
-                    <a href="#"><img src="assets/brands/cspace.svg" alt="C-Space"></a>
-                    <a href="#"><img src="assets/brands/rbc.svg" alt="RBC"></a>
-                    <a href="#"><img src="assets/brands/blossom.svg" alt="Blossom Flower Delivery"></a>
+                    <a href="https://cspace.uz/en"><img src="assets/brands/cspace.svg" alt="C-Space"></a>
+                    <a href="https://rbc-me.com/"><img src="assets/brands/rbc.svg" alt="RBC"></a>
+                    <a href="https://www.blossomflowerdelivery.com/"><img src="assets/brands/blossom.svg" alt="Blossom Flower Delivery"></a>
                 </div>
             </div>
         </div>
@@ -128,7 +129,7 @@
         </h1>
         <p>Discover how BlossomFlower dramatically transformed their customer service with PointAI. Our case study
             reveals the impressive journey from a 2.1/5 customer satisfaction rating to a stellar 4.5/5.</p>
-        <a href="#" class="button">Download the case</a>
+        <a href="#" class="button">Read the case</a>
     </section>
 
     <!-- Features Section -->
@@ -175,8 +176,8 @@
 
         <div class="hide-640"></div>
 
-        <a href="#" class="animated">
-            contact us
+        <a class="animated calendly">
+            Constact Sales
         </a>
     </section>
 
@@ -197,7 +198,7 @@
         </h1>
         <p>Book free consultation call with us:</p>
 
-        <a href="#" class="button">Contact us</a>
+        <a class="button calendly">Contact Sales</a>
 
         <p>By clicking on the button you agree to the Privacy Policy.</p>
 
@@ -209,25 +210,25 @@
         <div class="row">
             <div class="info">
                 <img src="assets/footer_logo.svg" alt="PointAI Logo Monochrome">
-                <p>Resolve 80% of your Support Tickets. Instantly</p>
+                <p>Next level support co-pilot for Shopify merchants</p>
                 <p>© 2023 PointAI Tech, Inc. All rights reserved.</p>
             </div>
             <div class="list">
                 <h4>Menu</h4>
-                <a href="#">About</a>
-                <a href="#">Features</a>
-                <a href="#">Form</a>
+                <a href="#why">About</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Form</a>
             </div>
             <div class="list">
                 <h4>Contacts</h4>
-                <a href="#">LinkedIn</a>
-                <a href="#">Medium</a>
-                <a href="#">E-mail</a>
+                <a href="https://www.linkedin.com/company/pointai/">LinkedIn</a>
+                <a href="https://www.instagram.com/pointai.tech/">instagram</a>
+                <a href="mailto:a@pointai.tech">E-mail</a>
             </div>
             <div class="list">
                 <h4>Resources</h4>
                 <a href="#">FAQs</a>
-                <a href="#">For developers</a>
+                <a href="https://documenter.getpostman.com/view/14780114/2s9YC4WE1C">For developers</a>
             </div>
         </div>
         <div class="divider"></div>
@@ -238,6 +239,31 @@
             <div class="hide-640"></div>
         </div>
     </footer>
+
+    <script>
+        const url = window.location.href;
+        const params = new URLSearchParams(new URL(url).search);
+        let exampleValue = params.get('example');
+
+        const utm = {
+            utmCampaign: params.get('utmCampaign'),
+            utmSource: params.get('utmSource'),
+            utmMedium: params.get('utmMedium'),
+            utmContent: params.get('utmContent'),
+            utmTerm: params.get('utmTerm'),
+        }
+
+        document.querySelectorAll(".calendly").forEach((item) => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
+                Calendly.initPopupWidget({
+                    url: 'https://calendly.com/akhamidov/consultation',
+                    utm: utm
+                });
+                return false;
+            });
+        });
+    </script>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

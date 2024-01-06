@@ -8,7 +8,8 @@
 @font-face {
     font-family: 'Aeonik Pro TRIAL';
     src: url('assets/fonts/AeonikProTRIAL-Light.otf') format('opentype');
-    font-weight: 300; /* Light */
+    font-weight: 300;
+    /* Light */
     font-style: normal;
 }
 
@@ -150,12 +151,13 @@ header .button {
     padding: 60px var(--padding-x) 72px var(--padding-x);
     background-image: url('assets/hero.png');
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: 50vw 5vh;
 }
 
 #hero h1 {
     max-width: 512px;
     font-size: 32px;
+    margin-top: 72px;
     font-weight: normal;
     color: var(--black)
 }
@@ -512,8 +514,7 @@ header .button {
     padding: 0px 128px;
     background: var(--blue);
     color: white;
-    margin-top: 70px;
-    margin-bottom: 24px;
+    margin: 32px 0px;
 }
 
 #contact p:nth-last-child(2) {
@@ -790,6 +791,10 @@ footer h4 {
         padding: 88px var(--padding-x) 176px var(--padding-x);
         background-size: 120%;
         background-position: calc((100vw - 280px) / 2 - 20px) 560px;
+    }
+
+    #contact .button {
+        padding: 0px 72px;
     }
 
     footer {
