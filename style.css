@@ -532,6 +532,10 @@ header .button {
     border-radius: 30px;
 }
 
+.calendly {
+    cursor: pointer;
+}
+
 
 /* Footer */
 footer {
